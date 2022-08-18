@@ -1,4 +1,5 @@
 import random
+from ipython_genutils.py3compat import xrange
 
 def create_phonebook():
     num = ''
@@ -20,9 +21,26 @@ def create_phonebook():
 
     phone = [random.randint(89010000000, 89990000000) for i in range(len(line))]
 
-    print(line)
-    print(surname)
-    print(name)
-    print(phone)
+    with open('Surnames&Names/Comments.txt', 'r', encoding='utf-8') as com:
+        com_lst = com.read().split('\n')
+    comments = list(random.choices(com_lst, k=(len(line))))
+
+    phonebook = [[] for x in xrange(len(line))]
+
+    # Тут можно было через zip, но кортежи неизмняемы, а нам нужно будет редактировать контакты.
+    # Хотя в модуле редактирования можно было бы написать функцию конвертации нужного кортежа в список и затем изменить, но...
+
+    for i in range(len(line)):
+        phonebook[i].append(line[i])
+        phonebook[i].append(surname[i])
+        phonebook[i].append(name[i])
+        phonebook[i].append(phone[i])
+        phonebook[i].append(comments[i])
+
+    with open('Phonebook.txt', 'w', encoding='utf-8') as data:
+        data.write('')
+        for row in phonebook:
+            data.write(str(row) + '\n')
+
 create_phonebook()
 
