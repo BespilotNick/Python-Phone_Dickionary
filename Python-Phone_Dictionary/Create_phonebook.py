@@ -38,7 +38,20 @@ def create_phonebook():
         phonebook[i].append(phone[i])
         phonebook[i].append(comments[i])
 
-    expd.export_to_txt(phonebook)
+    print('Выберите тип экспорта:\n'
+           '1 - Экспорт в формат txt.\n'
+           '2 - Экспорт в формат json.')
+
+    usernum = input('Выберите действие: ')
+    options = '12'
+    while usernum not in options:
+        usernum = input('Введено некорректное значение, выберите действие из списка: ')
+        continue
+
+    if usernum == 1:
+        expd.export_to_txt(phonebook)
+    else:
+        expd.export_to_json(phonebook)
 
 create_phonebook()
 
