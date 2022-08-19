@@ -1,9 +1,9 @@
 import json
 
-def export_to_txt(data):
+def export_to_txt(text):
     with open('Phonebook.txt', 'w', encoding='utf-8') as data:
         data.write('')
-        for row in data:
+        for row in text:
             data.write(str(row) + '\n')
 
 
