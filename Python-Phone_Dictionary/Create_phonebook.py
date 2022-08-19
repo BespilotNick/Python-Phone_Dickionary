@@ -38,10 +38,7 @@ def create_phonebook():
         phonebook[i].append(phone[i])
         phonebook[i].append(comments[i])
 
-    with open('Phonebook.txt', 'w', encoding='utf-8') as data:
-        data.write('')
-        for row in phonebook:
-            data.write(str(row) + '\n')
+    expd.export_to_txt(phonebook)
 
 create_phonebook()
 
