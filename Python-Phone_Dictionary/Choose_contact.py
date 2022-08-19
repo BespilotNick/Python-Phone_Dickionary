@@ -24,7 +24,7 @@ def choose_contact():
 
     if param == 1:
         index = int(input('Введите порядковый номер контакта: '))
-        contact = [row for row in book if row[0] == index]
+        contact = [row for row in book if list(row)[0] == index]
         print(contact)
         return contact
     elif param == 2:
