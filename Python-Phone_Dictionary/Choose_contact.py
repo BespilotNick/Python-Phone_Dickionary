@@ -4,13 +4,9 @@ def checking(param):
 
 def choose_contact():
     with open('Phonebook.txt', 'r', encoding='utf-8') as data:
-        text = data.read().split('\n')
-        book = []
-        for row in text:
-            book.append(row)
-        print(book)
-        # for row in book:
-        #     print(row)
+        book = data.read()
+
+    print(book)
 
     print('Параметры для выбора контакта: '
           '1 - Порядковый номер. '
@@ -29,6 +25,7 @@ def choose_contact():
     if param == 1:
         index = int(input('Введите порядковый номер контакта: '))
         contact = [row for row in book if row[0] == index]
+        print(contact)
         return contact
     elif param == 2:
         surname = input('Введите фамилию контакта: ')
