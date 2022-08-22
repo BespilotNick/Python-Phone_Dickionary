@@ -38,25 +38,25 @@ def create_phonebook():
         phonebook[i].append(phone[i])
         phonebook[i].append(comments[i])
 
-    # print('Выберите тип экспорта:\n'
-    #        '1 - Экспорт в формат txt.\n'
-    #        '2 - Экспорт в формат json.')
-    #
-    # usernum = input('Выберите действие: ')
-    # options = '12'
-    # while usernum not in options:
-    #     usernum = input('Введено некорректное значение, выберите действие из списка: ')
-    #     continue
-    #
-    # if usernum == 1:
-    #     expd.export_to_txt(phonebook)
-    # else:
-    #     expd.export_to_json(phonebook)
+    print('Выберите тип экспорта:\n'
+           '1 - Экспорт в формат txt.\n'
+           '2 - Экспорт в формат json.')
 
-    with open('Phonebook.txt', 'w', encoding='utf-8') as data:
-        data.write('')
-        for row in phonebook:
-            data.write(str(row) + '\n')
+    usernum = input('Выберите действие: ')
+    options = '12'
+    while usernum not in options:
+        usernum = input('Введено некорректное значение, выберите действие из списка: ')
+        continue
+
+    if usernum == 1:
+        expd.export_to_txt(phonebook)
+    else:
+        expd.export_to_json(phonebook)
+
+    # with open('Phonebook.txt', 'w', encoding='utf-8') as data:
+    #     data.write('')
+    #     for row in phonebook:
+    #         data.write(str(row) + '\n')
 
 create_phonebook()
 

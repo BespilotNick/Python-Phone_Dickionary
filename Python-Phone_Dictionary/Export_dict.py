@@ -17,5 +17,5 @@ def full_export_to_json():
     with open('Phonebook.txt', 'r', encoding='utf-8') as t_book:
         t_book.read()
 
-    with open('Phonebook.json', 'w') as j_book:
+    with open('Phonebook.json', 'w', encoding='utf-8') as j_book:
         json.dump(t_book, j_book)
