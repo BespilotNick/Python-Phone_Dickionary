@@ -35,9 +35,9 @@ Python 3.x
 ## Usage  
 On running the application, users will be prompted with a menu to perform various operations like adding, editing, or exporting contacts.
 
-Feel free to modify or extend this as per your needs!
+### Feel free to modify or extend this as per your needs!
 
 ## Author  
-Nick Allenov
-Email: AllenovNS@gmail.com
+Nick Allenov  
+Email: AllenovNS@gmail.com  
 Telegram: https://t.me/NickAllenov
